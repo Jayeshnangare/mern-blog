@@ -26,14 +26,15 @@ export default function Header() {
         <Button className='w-12 h-10 lg:hidden' color='gray' pill>
         <AiOutlineSearch/>
         </Button >
+
          <div className='flex gap-2 md:order-2'>
 
          <Button className='w-12 h-10 hidden sm:inline' color='gray' pill>
             <FaMoon/>
         </Button>
 
-        <Link to='/sign-in'>
-        <Button  gradientDuoTone='purpleToBlue' >Sign In</Button>
+        <Link to='/sign-in' >
+        <Button  gradientDuoTone='purpleToBlue' outline>Sign In</Button>
         </Link>
         <Navbar.Toggle />
          </div>
