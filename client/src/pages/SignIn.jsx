@@ -2,7 +2,6 @@ import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
 import React from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react';
-
 import {useDispatch, useSelector} from 'react-redux'
 import {signInStart, signInFailure, signInSuccess} from '../redux/user/userSlice.js'
 import OAuth from '../components/OAuth.jsx';
@@ -41,7 +40,7 @@ export default function SignIn() {
       const data = await res.json();
       if(data.success === false){
         // return setErrorMessage(data.message);
-        dispatch(signInFailure(data.message));
+         dispatch(signInFailure(data.message));
       }
 
       // setLoading(false);
