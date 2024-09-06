@@ -57,12 +57,13 @@ export default function SignUp() {
         via-purple-500 to-pink-500 rounded-lg text-white'>Jayesh's</span>
         Blog
         </Link>
-        <p className='text-sm mt-5 text-semibold '>This is <b>Blog</b> Website you can sign up with your email and password or with Google.</p>
+        <p className='text-sm mt-5 text-semibold '>This is <b>Blog</b> Website you can sign up with your usename, email and password or with Google.</p>
         </div>
 
         {/* right */}
         <div className='flex-1'>
           <form action="" className='flex flex-col gap-4' onSubmit={handleSubmit}>
+            
             <div>
               <Label value='Username'/>
               <TextInput type='text' placeholder='username' id='username'  onChange={handleChange}/>
