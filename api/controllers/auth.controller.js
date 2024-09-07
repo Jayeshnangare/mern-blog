@@ -20,7 +20,7 @@ export const signup = async (req, res, next) => {
     });
 
     try{
-        await newUser.save();
+        await newUser.save();  // save new user in mongodb using mongoose odm (object data Model)
         res.json('Signup Successful');
     }catch(err){
         next(err);
