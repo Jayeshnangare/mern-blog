@@ -10,9 +10,8 @@ import { toggleTheme } from '../redux/theme/themeSlice';
 export default function Header() {
     const path = useLocation().pathname;
     const dispatch = useDispatch();
-    const {currentUser} = useSelector(state => state.user);
+    const {currentUser} = useSelector((state)=> state.user);
     const {theme} = useSelector(state => state.theme);
-
   return (
     <Navbar className='border-b-2'>
         <Link to='/' className='self-center whitespace-nowrap 
@@ -47,13 +46,13 @@ export default function Header() {
             label={
                 <Avatar
                 alt='user'
-                img={currentUser.rest.profilePicture}
+                img={currentUser.profilePicture}
                 rounded/>
             }
             >
                 <Dropdown.Header>
-              <span className='block text-sm'>@{currentUser.rest.username}</span>
-              <span className='block text-sm font-medium truncate'>{currentUser.rest.email}</span>
+              <span className='block text-sm'>@{currentUser.username}</span>
+              <span className='block text-sm font-medium truncate'>{currentUser.email}</span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}>
               <Dropdown.Item>Profile</Dropdown.Item>
