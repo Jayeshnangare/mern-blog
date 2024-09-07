@@ -40,7 +40,7 @@ export const signin = async (req,res,next) =>{
     try{
         const validUser = await User.findOne({email});
         if(!validUser){
-           return next(400, 'User Not Found');
+           return next(errorHandler(404, 'User Not Found'));
         }
         const validPassword = bcryptjs.compareSync(password,validUser.password)  
         // compareSync convert password to hash password then compare with stored passwords
@@ -49,6 +49,7 @@ export const signin = async (req,res,next) =>{
         }
         
         const token = jwt.sign({ id: validUser._id,}, process.env.JWT_SECRET);
+
         const {password: pass, ...rest} = validUser._doc;
         
         
