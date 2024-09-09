@@ -22,6 +22,10 @@ const userSchema  = new mongoose.Schema({
             type: String,
             default: 'https://img.freepik.com/premium-photo/default-male-user-icon-blank-profile-image-green-background-profile-picture-icon_962764-98397.jpg?w=360',
         },
+        isAdmin:{
+            type: Boolean,
+            default: false,
+        },
         
 }, {timestamps:true}
 );
